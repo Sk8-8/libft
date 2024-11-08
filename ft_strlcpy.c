@@ -6,11 +6,22 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:38:47 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/05 17:43:12 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/08 17:34:24 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 size_t	strlcpy(char *dst, const char *src, size_t size)
 {
+	size_t	i;
 
+	i = 0;
+	while (i < size && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
