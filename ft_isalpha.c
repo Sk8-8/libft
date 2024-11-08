@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 12:34:32 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/07 13:33:52 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:08:46 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_isalpha(int c)
 		return (1);
 	else
 		return (0);
-}/*
+}
+/*
 
 #include <unistd.h>
 int	main(void)

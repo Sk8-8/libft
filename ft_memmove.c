@@ -6,11 +6,13 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:35:31 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/05 17:37:58 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:07:13 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 void	*memmove(void *dest, const void *src, size_t n)
 {
-
+	
 }

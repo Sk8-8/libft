@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 12:15:53 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/06 13:51:11 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:09:41 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ size_t	ft_strlen(const char *str)
 	while (str[i] != '\0')
 		i ++;
 	return (i);
-}/*
+}
+/*
 #include <stdio.h>
 
 int main(void)
