@@ -6,11 +6,22 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:56:30 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/05 17:56:59 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:02:25 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 char	*strrchr(const char *s, int c)
 {
+	size_t	i;
 
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+			a
+		i ++;
+	}
+	return ();
 }

@@ -6,10 +6,11 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:43:54 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/05 17:45:19 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:01:32 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 size_t	strlcat(char *dst, const char *src, size_t size)
 {
+	while (
 }

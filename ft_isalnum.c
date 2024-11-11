@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:30:01 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/07 13:48:25 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/11 14:36:23 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
+/*
 #include <unistd.h>
 int	main(void)
 {
@@ -31,4 +31,4 @@ int	main(void)
 	else
 		write(1, "nuhuh", 9);
 	return (0);
-}
+}*/
