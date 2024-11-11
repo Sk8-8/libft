@@ -6,22 +6,37 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:56:30 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/11 17:02:25 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:50:05 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
+	char	*res;
 
+	res = NULL;
 	i = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
-			a
+			res = (char *)&s[i];
 		i ++;
 	}
-	return ();
+	if (s[i] == c)
+		res = (char *)&s[i];
+	return (res);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%p\n", ft_strrchr("test", 'e'));
+	printf("%p\n", ft_strrchr("test", 's'));
+	printf("%p\n", ft_strrchr("test", 't'));
+	printf("%p\n", ft_strrchr("test", '0'));
+	return (0);
+}*/

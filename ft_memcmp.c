@@ -6,11 +6,13 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:28:09 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/05 18:50:53 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/11 17:32:01 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-
+	a
 }
