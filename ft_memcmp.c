@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:28:09 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/11 21:28:26 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:21:45 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*p1;
 	unsigned char	*p2;
 
@@ -28,14 +28,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (p1[i] - p2[i]);
 }
 /*
-	unsigned char	res;
-
-	if (n ==0)
-		return (0);
-	res = ((unsigned char) s1[n]) - ((unsigned char) s2[n]);
-	return (res);
-}
-*/
 #include <stdio.h>
 
 int	main(void)
@@ -46,4 +38,4 @@ int	main(void)
 	printf("%d\n", ft_memcmp("fail", "goal", 3));
 	printf("%d\n", ft_memcmp("fail", "goal", 4));
 	return (0);
-}
+}*/
