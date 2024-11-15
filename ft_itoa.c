@@ -1,44 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 15:01:59 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 20:05:08 by kguillem         ###   ########.fr       */
+/*   Created: 2024/11/15 20:48:39 by kguillem          #+#    #+#             */
+/*   Updated: 2024/11/15 21:30:42 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strdup(const char *s)
+int	poweroften(int n)
 {
-	char	*dup;
-	size_t	i;
-	size_t	len;
+	int	i;
 
-	i = 0;
-	len = ft_strlen(s);
-	dup = malloc(sizeof(char) * (len + 1));
-	if (dup == NULL)
-		return (NULL);
-	while (i <= len)
+	i = 1;
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
 	{
-		dup[i] = s[i];
+		i ++;
+		n = n * -1;
+	}
+	while (n >= 10)
+	{
+		n = n % 10;
 		i ++;
 	}
-	return (dup);
+	return (i);
 }
 
-#include <stdio.h>
-
-int	main(void)
+char	*fill(char *str, int n)
 {
-	const char	*test;
+	size_t	i;
 
-	test = "test";
-	printf("%p\n", test);
-	printf("%p\n", ft_strdup(test));
-	return (0);
+	i = 0;
+	if (n == -2147483648)
+		str{-;2;1}
+	if (n < 0)
+	{
+		str[i] = '-';
+		n = n * -1;
+		i ++;
+	}
+
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	size_t	i;
+
+	i = 0;
+	str = malloc(sizeof(str) * (poweroften(n) + 1));
+	if (str == NULL)
+		return (NULL);
+	return (fill(str, n));
 }

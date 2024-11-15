@@ -6,11 +6,11 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:30:01 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/11 14:36:23 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:32:48 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {
@@ -27,8 +27,8 @@ int	main(void)
 
 	i = ft_isalnum('c');
 	if (i == 1)
-		write(1, "ouiouioui", 9);
+		write(1, "yes", 3);
 	else
-		write(1, "nuhuh", 9);
+		write(1, "no", 2);
 	return (0);
 }*/

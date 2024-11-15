@@ -6,10 +6,11 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:00:07 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/12 18:28:17 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:04:08 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftlib.h"
 #include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -38,7 +39,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	}
 	join[s1len + i] = '\0';
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -46,4 +47,4 @@ int	main(void)
 	printf("%s\n", ft_strjoin("test", "ing"));
 	printf("%p\n", ft_strjoin("test", "ing"));
 	return (0);
-}
+}*/
