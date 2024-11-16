@@ -6,11 +6,11 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:00:07 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 20:04:08 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:38:11 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftlib.h"
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -38,6 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i ++;
 	}
 	join[s1len + i] = '\0';
+	return (join);
 }
 /*
 #include <stdio.h>
