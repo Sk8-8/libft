@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:02:07 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 21:31:26 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/16 15:17:01 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	tab = malloc(sizeof(tab) * (count(s, c) + 2));
+	tab = malloc(sizeof(*tab) * (count(s, c) + 2));
 	if (tab == NULL)
 		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			tab[k] = malloc(sizeof(tab) * (i + 1 - j));
+			tab[k] = malloc(sizeof(**tab) * (i + 1 - j));
 			if (tab[k] == NULL)
 				return (NULL);
 			j = i;
