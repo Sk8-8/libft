@@ -6,24 +6,30 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:02:07 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/22 19:11:53 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/24 17:51:46 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "libft.h"
 #include <unistd.h>
 
 size_t	count(char const *s, char c)
 {
-	size_t	i;
+	size_t	inword;
 	size_t	ccount;
 
-	i = 0;
+	inword = 0;
 	ccount = 0;
-	while (i != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == c)
-			ccount ++;
-		i ++;
+		if (*s == c)
+			inword = 0;
+		else
+		{
+			if (inword == 0)
+				ccount ++;
+			inword = 1;
+		}
+		s ++;
 	}
 	return (ccount);
 }
@@ -33,7 +39,7 @@ size_t	cutter(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0' || s[i] != c)
+	while (s[i] != '\0' && s[i] != c)
 		i ++;
 	return (i);
 }
@@ -41,28 +47,48 @@ size_t	cutter(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
+	size_t	size;
 	size_t	i;
 	size_t	j;
-	size_t	k;
 
 	i = 0;
 	j = 0;
-	k = 0;
 	tab = malloc(sizeof(*tab) * (count(s, c) + 1));
 	if (tab == NULL)
 		return (NULL);
-	while (s[k] != '\0')
+	while (s[j])
 	{
-		tab[j] = malloc(sizeof(**tab) * (cutter(s + k, c)));
-		if (tab[j] == NULL)
-			return (NULL);
-		k = cutter(s + k, c);
-		j ++;
+		size = cutter(s + j, c);
+		if (size  != 0)
+		{
+			tab[i] = malloc(sizeof(char) * size + 1);
+			ft_memcpy(tab[i], s + j, size);
+			tab[i][size] = '\0';
+			++i;
+		}
+		j = j + size + 1;
+		if (s[j - 1] == '\0')
+			break;
 	}
+	tab[i] = NULL;
+	return (tab);
 }
-
+/*
 #include <stdio.h>
 
-int	main(void)
+int	main(int argc,char **argv)
 {
-	printf("
+	int i;
+	char	**tab;
+
+	i = 0;
+	tab = ft_split(argv[1], ',');
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		free(tab[i]);
+		i ++;
+	}
+	free(tab);
+	return (0);
+}*/
