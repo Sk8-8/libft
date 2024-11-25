@@ -6,11 +6,13 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:48:39 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 21:30:42 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/25 20:53:18 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	poweroften(int n)
+#include "libft.h"
+
+int	sizer(int n)
 {
 	int	i;
 
@@ -36,14 +38,21 @@ char	*fill(char *str, int n)
 
 	i = 0;
 	if (n == -2147483648)
-		str{-;2;1}
+	{
+		str[11] = {'-','2','1','4','7','4','8','3','6','4','8'};
+		return (str);
+	}
 	if (n < 0)
 	{
 		str[i] = '-';
 		n = n * -1;
 		i ++;
 	}
-
+	if (n >= 10)
+		fill(str, n / 10);
+	str[i] = (n % 10) + '0';
+	i ++;
+	return (str);
 }
 
 char	*ft_itoa(int n)
@@ -52,8 +61,19 @@ char	*ft_itoa(int n)
 	size_t	i;
 
 	i = 0;
-	str = malloc(sizeof(str) * (poweroften(n) + 1));
+	str = malloc(sizeof(str) * (sizer(n) + 1));
 	if (str == NULL)
 		return (NULL);
-	return (fill(str, n));
+	str = fill(str,n);
+	return (str);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	int	test = 2850;
+
+	printf("%s\n", ft_itoa(test));
+	return (0);
 }

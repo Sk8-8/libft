@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:01:59 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 20:05:08 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/25 19:19:45 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s)
 	}
 	return (dup);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -41,4 +41,4 @@ int	main(void)
 	printf("%p\n", test);
 	printf("%p\n", ft_strdup(test));
 	return (0);
-}
+}*/
