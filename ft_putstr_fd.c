@@ -6,14 +6,14 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:17:22 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 15:19:58 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:27:23 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putsr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 

@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:02:07 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/25 19:13:12 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:11:29 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -43,7 +43,19 @@ size_t	cutter(char const *s, char c)
 		i ++;
 	return (i);
 }
+void	*copy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
 
+	i = 0;
+	while (i != n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	((unsigned char *)dest)[i] = '\0';
+	return (dest);
+}
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -62,9 +74,8 @@ char	**ft_split(char const *s, char c)
 		if (size != 0)
 		{
 			tab[i] = malloc(sizeof(char) * size + 1);
-			ft_memcpy(tab[i], s + j, size);
-			tab[i][size] = '\0';
-			++i;
+			copy(tab[i], s + j, size);
+			i++;
 		} 
 		j = j + size + 1;
 		if (s[j - 1] == '\0')
@@ -73,6 +84,7 @@ char	**ft_split(char const *s, char c)
 	tab[i] = NULL;
 	return (tab);
 }
+
 /*
 #include <stdio.h>
 
@@ -81,6 +93,8 @@ int	main(int argc,char **argv)
 	int i;
 	char	**tab;
 
+	if (argc == 0)
+		return (1);
 	i = 0;
 	tab = ft_split(argv[1], ',');
 	while (tab[i])
@@ -91,4 +105,15 @@ int	main(int argc,char **argv)
 	}
 	free(tab);
 	return (0);
-}*/
+}
+
+char	*filler(char **tab, size_t i, size_t size, char const *s, size_t j)
+{
+	tab[i] = malloc(sizeof(char) * size + 1);
+	if (tab[i] == NULL)
+		return (NULL);
+	ft_memcpy(tab[i], s + j, size);
+	tab[i][size] = '\0';
+	return (tab[i]);
+}
+*/

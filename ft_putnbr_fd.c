@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:53:55 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/15 15:09:38 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:12:25 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr_fd(nb / 10);
+		ft_putnbr_fd(n / 10, fd);
 	}
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
