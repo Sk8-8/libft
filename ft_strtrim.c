@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:31:13 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/26 19:04:03 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/27 14:27:50 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimed[i] = '\0';
 	return (trimed);
 }
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -81,6 +82,4 @@ int	main(void)
 	printf("%s\n", ft_strtrim("orem \n ipsum \t dolor \n sit \t amet", " "));
 	printf("%p\n", ft_strtrim("teaaaaaaaaast", "ts"));
 	return (0);
-}
-
-
+}*/

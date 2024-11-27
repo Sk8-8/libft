@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 17:43:54 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/16 17:37:19 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:57:25 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,23 @@ size_t	strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	lendst = ft_strlen(dst);
-	while (i < size && src[i] != '\0')
+	while (i + lendst + 1 < size && src[i] != '\0')
 	{
-		dst[i + lendst + 1] = src[i];
+		dst[i + lendst] = src[i];
 		i ++;
 	}
 	dst[i + lendst + 1] = '\0';
-	return (ft_strlen(src) + lendst);
+	return (lendst + ft_strlen(src));
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	const char	*src = "ing";
+	char	dst[100] = "test";
+
+	strlcat(dst, src, 10);
+	printf("%s\n", dst);
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 17:02:07 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/26 17:11:29 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:03:54 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -43,6 +43,7 @@ size_t	cutter(char const *s, char c)
 		i ++;
 	return (i);
 }
+
 void	*copy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
@@ -56,6 +57,7 @@ void	*copy(void *dest, const void *src, size_t n)
 	((unsigned char *)dest)[i] = '\0';
 	return (dest);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -76,7 +78,7 @@ char	**ft_split(char const *s, char c)
 			tab[i] = malloc(sizeof(char) * size + 1);
 			copy(tab[i], s + j, size);
 			i++;
-		} 
+		}
 		j = j + size + 1;
 		if (s[j - 1] == '\0')
 			break ;
