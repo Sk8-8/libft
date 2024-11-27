@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:53:32 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/26 16:51:34 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:29:14 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,26 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
-	while (big[i] != '\0' && i < len && little[j] != '\0')
+	while (big[i] != '\0' && i < len)
 	{
-		if (big[i] == little[j])
+		j = 0;
+		while (big[i + j] == little[j])
+		{
 			j ++;
-		else
-			j = 0;
+			if (!little[j])
+				return ((char *)&big[i]);
+		}
 		i ++;
 	}
-	if (little[j] == '\0')
-		return ((char *)&big[i - j]);
-	else
-		return (NULL);
+	return (NULL);
 }
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	printf("%p\n", ft_strnstr("testing", "test", 3));
-	printf("%p\n", ft_strnstr("testing", "ting", 7));
-	printf("%p\n", ft_strnstr("testing", "", 3));
+	printf("%s\n", ft_strnstr("aaab", "aab", 4));
+	//printf("%p\n", ft_strnstr("testing", "ting", 7));
+	//printf("%p\n", ft_strnstr("testing", "", 3));
 	return (0);
 }*/

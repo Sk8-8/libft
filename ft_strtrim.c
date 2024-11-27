@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:31:13 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/27 14:27:50 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:14:59 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,41 +16,45 @@
 size_t	starttrim(char const *s1, char const *set)
 {
 	size_t	iset;
-	size_t	is1;
+	size_t	i;
 
 	iset = 0;
-	is1 = 0;
+	i = 0;
 	while (set[iset] != '\0')
 	{
-		if (s1[is1] == set[iset])
+		if (s1[i] == '\0')
+			return (i);
+		if (s1[i] == set[iset])
 		{
-			is1 ++;
+			i ++;
 			iset = 0;
 		}
 		else
 			iset ++;
 	}
-	return (is1);
+	return (i);
 }
 
 size_t	endtrim(char const *s1, char const *set)
 {
 	size_t	iset;
-	size_t	is1;
+	size_t	i;
 
 	iset = 0;
-	is1 = ft_strlen(s1) - 1;
+	i = ft_strlen(s1) - 1;
 	while (set[iset] != '\0')
 	{
-		if (s1[is1] == set[iset])
+		if (i == 0)
+			return (0);
+		if (s1[i] == set[iset])
 		{
-			is1 --;
+			i --;
 			iset = 0;
 		}
 		else
 			iset ++;
 	}
-	return (is1);
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -63,7 +67,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	end = endtrim(s1, set);
 	start = starttrim(s1, set);
-	trimed = malloc(sizeof(*trimed) * (ft_strlen(s1) + 1 - (start + end)));
+	if (end < start)
+	{
+		end = 0;
+		start = 1;
+	}
+	trimed = malloc(sizeof(*trimed) * (end - start + 2));
 	if (trimed == NULL)
 		return (NULL);
 	while (i + start <= end)
@@ -79,7 +88,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	printf("%s\n", ft_strtrim("orem \n ipsum \t dolor \n sit \t amet", " "));
-	printf("%p\n", ft_strtrim("teaaaaaaaaast", "ts"));
+	printf("%s\n", ft_strtrim("abccba.", "abc"));
 	return (0);
 }*/
