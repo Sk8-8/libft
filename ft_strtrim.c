@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 18:31:13 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/27 20:14:59 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:24:19 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	end = endtrim(s1, set);
 	start = starttrim(s1, set);
+	if (s1[0] == '\0')
+		return (ft_strdup(""));
 	if (end < start)
 	{
 		end = 0;
@@ -88,6 +90,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	printf("%s\n", ft_strtrim("abccba.", "abc"));
+	printf("%s\n", ft_strtrim("", "abc"));
 	return (0);
 }*/
