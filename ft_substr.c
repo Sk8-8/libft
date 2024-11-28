@@ -6,7 +6,7 @@
 /*   By: kguillem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:56:32 by kguillem          #+#    #+#             */
-/*   Updated: 2024/11/16 15:23:16 by kguillem         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:46:33 by kguillem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 
 	i = 0;
+	if (ft_strlen(s) <= start)
+		return (ft_strdup(""));
 	sub = malloc(sizeof(*sub) * (len + 1));
 	if (sub == NULL)
 		return (NULL);
